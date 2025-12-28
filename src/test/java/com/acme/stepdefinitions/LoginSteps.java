@@ -24,7 +24,11 @@ public class LoginSteps {
     }
 
     @After
-    public void tearDown() {
+    public void tearDown(io.cucumber.java.Scenario scenario) {
+        // Take screenshot if scenario failed
+        if (scenario.isFailed()) {
+            ScreenshotUtils.takeScreenshot(DriverManager.getDriver(), "failed_" + scenario.getName());
+        }
         DriverManager.quitDriver();
     }
 
@@ -95,6 +99,10 @@ public class LoginSteps {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
+        
+        // Take screenshot before failing the test
+        ScreenshotUtils.takeScreenshot(DriverManager.getDriver(), "negative_test_error");
+        
         // INTENTIONAL FAILURE: This negative test case is designed to fail
         // to demonstrate error handling and maintain negative use case coverage
         Assert.fail("NEGATIVE TEST CASE: This test is intentionally failed to demonstrate error handling for incorrect login credentials");
