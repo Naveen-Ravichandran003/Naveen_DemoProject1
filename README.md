@@ -23,7 +23,7 @@ This project was generated using Amazon Q Developer AI assistance.
 - Created CI/CD-ready execution scripts
 - Generated the initial README documentation
 
-### Manual Effort by Automation Tester
+### Manual Effort by Developer
 - Provided user friendly prompts to Amazon Q
 - Reviewed and validated generated code
 - Minor refinements for project-specific needs
