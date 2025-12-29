@@ -23,20 +23,6 @@ A complete end-to-end demonstration of this project, including Amazon Q Develope
 
 **Note**: Screenshots are automatically captured during test execution and stored in the `test-screenshots/` directory.
 
-### 📊 Test Reports
-
-#### Cucumber HTML Report
-📄 **Sample Report**: [View Cucumber HTML Report](reports/cucumber-report.html)
-
-#### TestNG HTML Report
-📈 **Sample Report**: [View TestNG HTML Report](reports/testng-report-sample.html)
-
-#### Allure Report
-📉 **Interactive Dashboard**: Generated after running `mvn allure:report`
-
-**Note**: After running tests, actual reports are generated in the `target/` directory.
-
-
 ## 🤖 Amazon Q Developer Contribution
 This project was generated using Amazon Q Developer AI assistance.
 
@@ -174,10 +160,6 @@ After execution, reports are available at:
 - **Allure Report**: `target/site/allure-maven-plugin/index.html`
 - **Screenshots**: `test-screenshots/`
 
-**Sample Reports** (for demonstration):
-- **Cucumber Sample**: [reports/cucumber-report.html](reports/cucumber-report.html)
-- **TestNG Sample**: [reports/testng-report-sample.html](reports/testng-report-sample.html)
-
 ## 📊 CI/CD Integration
 
 ### 🤔 Why Use CI/CD Integration?
@@ -223,7 +205,6 @@ After execution, reports are available at:
 
 ### Viewing Results
 - **GitHub Actions**: [View Workflows](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/actions)
-- **Download Artifacts**: Test reports, screenshots, and results
 - **Build Status**: [![CI](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/actions/workflows/ci.yml/badge.svg)](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/actions/workflows/ci.yml)
 
 ### Pipeline Configuration

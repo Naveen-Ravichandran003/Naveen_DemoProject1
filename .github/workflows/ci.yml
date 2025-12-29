@@ -69,4 +69,3 @@ jobs:
         echo "- **Execution Mode:** Sequential (Headless Chrome)" >> $GITHUB_STEP_SUMMARY
         echo "- **Reports Generated:** Cucumber HTML, TestNG HTML, Allure" >> $GITHUB_STEP_SUMMARY
         echo "- **Screenshots:** Available in artifacts" >> $GITHUB_STEP_SUMMARY
-        echo "- **Download:** [Test Reports & Screenshots](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
