@@ -48,7 +48,12 @@ jobs:
         DISPLAY: :99
         
     - name: Generate Allure Report
-      run: mvn allure:report
+      run: |
+        mvn allure:report
+        # Also generate with Allure CLI if available
+        if command -v allure &> /dev/null; then
+          allure generate target/allure-results --clean -o target/allure-html-report
+        fi
       if: always()
       
     - name: Check generated reports
@@ -57,6 +62,9 @@ jobs:
         ls -la target/ || true
         ls -la target/cucumber-html-reports/ || true
         ls -la target/site/ || true
+        ls -la target/allure-html-report/ || true
+        echo "Allure results:"
+        ls -la target/allure-results/ || true
       if: always()
         
     - name: Upload test results
@@ -68,6 +76,7 @@ jobs:
           target/cucumber-html-reports/
           target/cucumber-json-reports/
           target/site/allure-maven-plugin/
+          target/allure-html-report/
           test-screenshots/
         retention-days: 30
         
