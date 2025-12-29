@@ -5,11 +5,15 @@ echo ========================================
 
 cd /d "C:\Users\KANNAN\IdeaProjects\DemoProject-Amazon Q"
 
-echo [1/3] Generating Allure HTML report...
+echo [1/4] Running TestNG tests...
+call mvn clean test -DsuiteXmlFile=testng.xml
+
+echo.
+echo [2/4] Generating Allure HTML report...
 call mvn allure:report
 
 echo.
-echo [2/3] Opening all reports...
+echo [3/4] Opening all reports...
 
 REM Open Cucumber HTML report
 if exist "target\cucumber-html-reports\report.html" (
@@ -17,6 +21,15 @@ if exist "target\cucumber-html-reports\report.html" (
     echo 🌐 Cucumber HTML report opened
 ) else (
     echo ⚠️ Cucumber HTML report not found
+)
+
+REM Open TestNG report
+if exist "target\surefire-reports\index.html" (
+    timeout /t 1 /nobreak >nul
+    start target\surefire-reports\index.html
+    echo 📊 TestNG report opened
+) else (
+    echo ⚠️ TestNG report not found
 )
 
 REM Wait and open Allure report
@@ -37,13 +50,13 @@ if exist "test-screenshots" (
 )
 
 echo.
-echo [3/3] Report generation completed!
+echo [4/4] Report generation completed!
 echo ========================================
 echo AVAILABLE REPORTS:
-echo 🌐 Cucumber HTML: target\cucumber-html-reports\report.html
+echo 📊 TestNG HTML: target\surefire-reports\index.html
 echo 📈 Allure HTML: target\site\allure-maven-plugin\index.html
 echo 📊 Cucumber JSON: target\cucumber-json-reports\Cucumber.json
-echo 📄 Cucumber XML: target\cucumber-xml-reports\Cucumber.xml
+echo 📄 TestNG XML: target\testng-xml-reports\TestNG.xml
 echo 📸 Screenshots: test-screenshots\
 echo ========================================
 

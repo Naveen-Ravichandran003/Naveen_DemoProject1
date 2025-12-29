@@ -18,8 +18,8 @@ This project was generated using Amazon Q Developer AI assistance.
 - Generated the complete project structure
 - Created Page Object Model classes
 - Implemented Cucumber step definitions
-- Configured Maven dependencies
-- Set up Allure reporting
+- Configured Maven dependencies with TestNG
+- Set up Allure reporting with TestNG integration
 - Created CI/CD-ready execution scripts
 - Generated the initial README documentation
 
@@ -38,8 +38,8 @@ This demonstrates how Amazon Q can significantly accelerate enterprise-grade tes
 - **Maven** - Build and dependency management
 - **Selenium WebDriver 4.15.0** - Web automation
 - **Cucumber 7.14.0** - BDD framework
+- **TestNG 7.8.0** - Test runner with parallel execution
 - **Allure 2.24.0** - Advanced reporting
-- **JUnit 4** - Test runner
 - **WebDriverManager** - Browser driver management
 
 ### Framework Structure
@@ -62,6 +62,7 @@ src/
         ├── features/login.feature
         ├── allure.properties
         └── cucumber.properties
+testng.xml              # TestNG suite configuration
 ```
 
 ## ✨ Key Features
@@ -71,7 +72,7 @@ src/
 - 📱 **Headless execution** for CI/CD
 - 📸 **Automatic screenshot capture**
 - ⏱️ **Smart wait strategies**
-- 🔄 **Parallel execution support**
+- 🚀 **Parallel execution** with TestNG (3 threads)
 
 ### BDD Implementation
 - 📝 **Gherkin scenarios** for business-readable tests
@@ -79,9 +80,17 @@ src/
 - 📊 **Data-driven testing ready**
 - 🔗 **Step definition reusability**
 
+### TestNG Features
+- ⚡ **Parallel execution** - Run tests simultaneously
+- 📊 **Advanced reporting** - Rich HTML reports
+- 🔧 **Flexible annotations** - Better test lifecycle control
+- 🎯 **Test grouping** - Organize tests by categories
+- 📋 **Suite management** - XML-based test configuration
+
 ### Reporting & Analytics
 - 📈 **Allure reports** - Interactive dashboards
 - 🌐 **Cucumber HTML reports** - Standard BDD reporting
+- 📊 **TestNG HTML reports** - Detailed execution reports
 - 📊 **JSON/XML exports** - CI/CD integration
 - 📸 **Visual test evidence** - Screenshots in reports
 
@@ -113,13 +122,19 @@ mvn clean install
 
 ### Execution Options
 
-#### 1. Run Tests
+#### 1. Run Tests with TestNG
 ```bash
-# Run all tests
+# Run all tests using TestNG suite
 mvn clean test
+
+# Run specific TestNG suite
+mvn test -DsuiteXmlFile=testng.xml
 
 # Headless mode (CI/CD)
 mvn test -Dheadless=true
+
+# Parallel execution (3 threads)
+mvn test -Dparallel=methods -DthreadCount=3
 ```
 
 #### 2. Generate Reports
@@ -139,8 +154,9 @@ generate-reports.bat
 ### Report Access
 After execution, reports are available at:
 - **Cucumber HTML**: `target/cucumber-html-reports/report.html`
+- **TestNG Report**: `target/surefire-reports/index.html`
 - **Allure Report**: `target/site/allure-maven-plugin/index.html`
-- **Pre-built Reports**: `reports/cucumber-report.html`
+- **TestNG XML**: `target/testng-xml-reports/TestNG.xml`
 - **Screenshots**: `test-screenshots/`
 
 ## 📊 CI/CD Integration
@@ -228,6 +244,7 @@ After execution, reports are available at:
 - ✅ **Error Handling** - Robust exception management
 - ✅ **Screenshot Evidence** - Visual test validation
 - ✅ **Wait Strategies** - Reliable element synchronization
+- ✅ **TestNG Integration** - Advanced test management
 
 ## 🤝 Contributing
 
