@@ -1,12 +1,11 @@
 package com.acme.runners;
 
 import com.acme.utils.ReportOpener;
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.AfterClass;
-import org.junit.runner.RunWith;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.DataProvider;
 
-@RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "com.acme.stepdefinitions",
@@ -19,9 +18,15 @@ import org.junit.runner.RunWith;
         },
         monochrome = true
 )
-public class TestRunner {
+public class TestRunner extends AbstractTestNGCucumberTests {
     
-    @AfterClass
+    @Override
+    @DataProvider(parallel = true)
+    public Object[][] scenarios() {
+        return super.scenarios();
+    }
+    
+    @AfterSuite
     public static void openReportsAfterAllTests() {
         try {
             // Wait for all reports to be generated

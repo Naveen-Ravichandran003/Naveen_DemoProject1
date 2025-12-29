@@ -10,7 +10,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
+import org.testng.Assert;
 
 public class LoginSteps {
     private LoginPage loginPage;
@@ -67,7 +67,7 @@ public class LoginSteps {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
-        Assert.assertTrue("Dashboard should be displayed", dashboardPage.isDashboardDisplayed());
+        Assert.assertTrue(dashboardPage.isDashboardDisplayed(), "Dashboard should be displayed");
         
         // Additional wait if this is part of logout scenario
         try {
