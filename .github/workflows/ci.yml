@@ -84,6 +84,51 @@ jobs:
           test-screenshots/
         retention-days: 30
         
+    - name: Deploy to GitHub Pages
+      if: always() && github.ref == 'refs/heads/main'
+      run: |
+        # Create a simple index page with links to reports
+        mkdir -p gh-pages
+        cp -r target/cucumber-html-reports/* gh-pages/ 2>/dev/null || echo "No cucumber reports found"
+        
+        # Create index.html with direct links
+        cat > gh-pages/index.html << 'EOF'
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Test Reports - Naveen_DemoProject1</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 40px; }
+                .container { max-width: 800px; }
+                .report-link { display: block; padding: 15px; margin: 10px 0; background: #f5f5f5; text-decoration: none; border-radius: 5px; }
+                .report-link:hover { background: #e0e0e0; }
+                h1 { color: #333; }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>🧪 Test Reports - Naveen_DemoProject1</h1>
+                <p>Latest test execution reports from CI/CD pipeline</p>
+                
+                <a href="report.html" class="report-link">
+                    <strong>📊 Cucumber HTML Report</strong><br>
+                    Interactive test execution report with scenarios and steps
+                </a>
+                
+                <p><strong>Repository:</strong> <a href="https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1">Naveen_DemoProject1</a></p>
+                <p><strong>Last Updated:</strong> $(date)</p>
+            </div>
+        </body>
+        </html>
+        EOF
+        
+    - name: Deploy to GitHub Pages
+      if: always() && github.ref == 'refs/heads/main'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: gh-pages
+        
     - name: Upload Allure Results
       uses: actions/upload-artifact@v4
       if: always()
@@ -96,9 +141,8 @@ jobs:
       if: always()
       run: |
         echo "📊 Test Reports Generated Successfully!"
-        echo "🔗 Download artifacts from: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-        echo "📁 Available reports:"
-        echo "  - Cucumber HTML Report"
-        echo "  - Cucumber JSON Report" 
-        echo "  - Allure Results"
-        echo "  - Test Screenshots"
+        echo "🔗 Download artifacts: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+        if [ "${{ github.ref }}" == "refs/heads/main" ]; then
+          echo "🌐 Live Reports: https://${{ github.repository_owner }}.github.io/Naveen_DemoProject1/"
+          echo "📄 Direct Report: https://${{ github.repository_owner }}.github.io/Naveen_DemoProject1/report.html"
+        fi
