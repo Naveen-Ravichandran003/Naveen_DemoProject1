@@ -32,11 +32,14 @@ jobs:
       uses: browser-actions/setup-chrome@latest
       
     - name: Run tests
-      run: mvn clean test -Dheadless=true
+      run: mvn clean test -Dheadless=true -DCI=true
+      env:
+        CI: true
       
     - name: Generate Allure Report
       if: always()
-      run: mvn allure:report
+      run: |
+        mvn allure:report || echo "Allure report generation failed but continuing..."
       
     - name: Upload test reports
       if: always()

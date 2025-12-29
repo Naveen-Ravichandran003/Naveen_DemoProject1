@@ -40,8 +40,13 @@ public class TestRunner extends AbstractTestNGCucumberTests {
             // Generate TestNG HTML report with actual test counts
             TestNGReportGenerator.generateHTMLReport(2, 1, 3);
             
-            // Open all reports automatically
-            ReportOpener.openAllReports();
+            // Only open reports in non-CI environment
+            String isCI = System.getProperty("CI", System.getenv("CI"));
+            if (isCI == null || !"true".equalsIgnoreCase(isCI)) {
+                ReportOpener.openAllReports();
+            } else {
+                System.out.println("CI environment detected - skipping report opening");
+            }
             
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

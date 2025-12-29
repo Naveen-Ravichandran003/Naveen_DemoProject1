@@ -10,6 +10,32 @@ A complete end-to-end demonstration of this project, including Amazon Q Develope
 
 🔗 **Demo Video (Google Drive):** https://drive.google.com/file/d/1jLzyRj0eA2G76cf_fTAeDACaOkITJ09t/view?usp=sharing
 
+### 📸 Test Execution Screenshots
+
+#### Scenario 1: User Login and Dashboard Verification
+📷 [View Screenshot: User Login Success](test-screenshots/passed_User_login_and_verify_dashboard_20251229_211346.png)
+
+#### Scenario 2: User Logout Functionality
+📷 [View Screenshot: User Logout Success](test-screenshots/passed_User_logout_functionality_20251229_211418.png)
+
+#### Scenario 3: Negative Test - Invalid Credentials
+📷 [View Screenshot: Negative Test](test-screenshots/failed_NEGATIVE_TEST___User_login_with_incorrect_password__Intentional_Failure__20251229_211434.png)
+
+**Note**: Screenshots are automatically captured during test execution and stored in the `test-screenshots/` directory.
+
+### 📊 Test Reports
+
+#### Cucumber HTML Report
+📄 **Sample Report**: [View Cucumber HTML Report](reports/cucumber-report.html)
+
+#### TestNG HTML Report
+📈 **Sample Report**: [View TestNG HTML Report](reports/testng-report-sample.html)
+
+#### Allure Report
+📉 **Interactive Dashboard**: Generated after running `mvn allure:report`
+
+**Note**: After running tests, actual reports are generated in the `target/` directory.
+
 
 ## 🤖 Amazon Q Developer Contribution
 This project was generated using Amazon Q Developer AI assistance.
@@ -103,30 +129,6 @@ testng.xml              # TestNG suite configuration
 3. **User Logout** - Complete session termination
 4. **Negative Testing** - Invalid credential handling
 
-### 📸 Test Execution Screenshots
-
-#### Scenario 1: User Login and Dashboard Verification
-[![User Login Success](test-screenshots/passed_User_login_and_verify_dashboard_20251229_211346.png)](test-screenshots/passed_User_login_and_verify_dashboard_20251229_211346.png)
-*Click to view full-size screenshot of successful login and dashboard verification*
-
-#### Scenario 2: User Logout Functionality
-[![User Logout Success](test-screenshots/passed_User_logout_functionality_20251229_211418.png)](test-screenshots/passed_User_logout_functionality_20251229_211418.png)
-*Click to view full-size screenshot of successful logout process*
-
-#### Scenario 3: Negative Test - Invalid Credentials
-[![Negative Test](test-screenshots/failed_NEGATIVE_TEST___User_login_with_incorrect_password__Intentional_Failure__20251229_211434.png)](test-screenshots/failed_NEGATIVE_TEST___User_login_with_incorrect_password__Intentional_Failure__20251229_211434.png)
-*Click to view full-size screenshot of intentional failure test with invalid credentials*
-
-### 📊 Test Reports
-
-#### Cucumber HTML Report
-[![Cucumber Report](reports/cucumber-report-preview.png)](target/cucumber-html-reports/report.html)
-*Click to open interactive Cucumber HTML report with detailed BDD test results*
-
-#### TestNG HTML Report
-[![TestNG Report](reports/testng-report-preview.png)](target/testng-html-report.html)
-*Click to open TestNG HTML report with execution statistics and test summaries*
-
 ### Target Application
 - **ACME Test Application**: https://acme-test.uipath.com/
 - **Test Credentials**: test-demo@acme.com / Test@1234
@@ -171,6 +173,10 @@ After execution, reports are available at:
 - **TestNG HTML**: `target/testng-html-report.html`
 - **Allure Report**: `target/site/allure-maven-plugin/index.html`
 - **Screenshots**: `test-screenshots/`
+
+**Sample Reports** (for demonstration):
+- **Cucumber Sample**: [reports/cucumber-report.html](reports/cucumber-report.html)
+- **TestNG Sample**: [reports/testng-report-sample.html](reports/testng-report-sample.html)
 
 ## 📊 CI/CD Integration
 

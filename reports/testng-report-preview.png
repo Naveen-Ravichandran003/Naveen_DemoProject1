@@ -1,0 +1,10 @@
+# TestNG Report Preview
+
+This is a placeholder for the TestNG report preview image.
+
+The actual TestNG HTML report shows:
+- Test execution statistics
+- Pass/Fail counts
+- Execution timeline
+- Test method details
+- Exception stack traces

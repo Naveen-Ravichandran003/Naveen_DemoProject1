@@ -1,0 +1,15 @@
+# Report Preview Images
+
+This directory contains preview images for the test reports.
+
+## Available Previews
+
+- `cucumber-report-preview.png` - Preview of Cucumber HTML report
+- `testng-report-preview.png` - Preview of TestNG HTML report
+
+## Sample Reports
+
+- `cucumber-report.html` - Sample Cucumber HTML report
+- `testng-report-sample.html` - Sample TestNG HTML report
+
+These are demonstration files showing the format of generated reports.
