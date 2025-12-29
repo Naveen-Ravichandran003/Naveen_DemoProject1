@@ -30,27 +30,23 @@ public class TestRunner extends AbstractTestNGCucumberTests {
     @AfterSuite
     public static void openReportsAfterAllTests() {
         try {
-            // Wait for all reports to be generated
-            Thread.sleep(3000);
-            
             System.out.println("\n" + "=".repeat(50));
             System.out.println("ALL TEST SCENARIOS COMPLETED");
             System.out.println("=".repeat(50));
             
-            // Generate TestNG HTML report with actual test counts
+            // Generate TestNG HTML report
             TestNGReportGenerator.generateHTMLReport(2, 1, 3);
             
             // Only open reports in non-CI environment
-            String isCI = System.getProperty("CI", System.getenv("CI"));
-            if (isCI == null || !"true".equalsIgnoreCase(isCI)) {
+            boolean isCI = "true".equalsIgnoreCase(System.getenv("CI"));
+            if (!isCI) {
                 ReportOpener.openAllReports();
             } else {
                 System.out.println("CI environment detected - skipping report opening");
             }
             
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            System.out.println("Report opening interrupted: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Error during report generation: " + e.getMessage());
         }
     }
 }

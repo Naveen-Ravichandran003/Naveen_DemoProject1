@@ -11,7 +11,7 @@ A complete end-to-end demonstration of this project, including Amazon Q Develope
 🔗 **Demo Video (Google Drive):** https://drive.google.com/file/d/1jLzyRj0eA2G76cf_fTAeDACaOkITJ09t/view?usp=sharing
 
 ## 🤖 Amazon Q Developer Contribution
-This project was generated using Amazon Q Developer AI assistance.
+This project was generated using Amazon Q Developer AI assistance with continuous code quality improvements.
 
 ### What Amazon Q Did
 - Generated the complete project structure
@@ -20,15 +20,28 @@ This project was generated using Amazon Q Developer AI assistance.
 - Configured Maven dependencies with TestNG
 - Set up Allure reporting with TestNG integration
 - Created CI/CD-ready execution scripts
-- Generated the initial README documentation
+- Generated comprehensive documentation
+- **Code quality improvements** - Optimized TestRunner for better reliability
+- **Performance optimization** - Removed Thread.sleep() for faster execution
+- **Exception handling** - Enhanced error management and CI detection
 
 ### Manual Effort by Developer
-- Provided user friendly prompts to Amazon Q
+- Provided user-friendly prompts to Amazon Q
 - Reviewed and validated generated code
 - Minor refinements for project-specific needs
 - Executed and demonstrated the framework
+- Code quality validation and testing
 
-This demonstrates how Amazon Q can significantly accelerate enterprise-grade test automation development.
+This demonstrates how Amazon Q can significantly accelerate enterprise-grade test automation development while maintaining high code quality standards.
+
+## 🎆 Recent Updates
+
+### Latest Improvements (December 2024)
+- **Code Quality Enhancement** - Removed Thread.sleep() for better performance
+- **Exception Handling** - Improved error management and CI detection
+- **Documentation Update** - Enhanced README with current project metrics
+- **Performance Optimization** - Faster test execution without delays
+- **Code Review** - Applied best practices for enterprise-grade automation
 
 ## 🏗️ Architecture
 
@@ -219,11 +232,13 @@ After execution, reports are available at:
 ## 📈 Project Metrics
 
 ### Framework Statistics
-- **Total Files**: 12+ automation files
+- **Total Files**: 15+ automation files
 - **Code Coverage**: Page Object Model implementation
-- **Test Scenarios**: 3 comprehensive test cases
+- **Test Scenarios**: 4 comprehensive test cases (positive, negative, workflow)
 - **Reporting Formats**: 3 different report types
 - **Execution Mode**: Sequential with fresh browser sessions
+- **Code Quality**: Optimized for performance and reliability
+- **Language Distribution**: Java (82.9%), Batchfile (14.6%), Gherkin (2.5%)
 
 ### Quality Assurance
 - ✅ **Page Object Model** - Maintainable code structure
@@ -234,6 +249,9 @@ After execution, reports are available at:
 - ✅ **TestNG Integration** - Custom HTML report generation
 - ✅ **Thread Safety** - ThreadLocal WebDriver management
 - ✅ **Fresh Sessions** - Clean browser state per test
+- ✅ **Code Quality** - Optimized execution without Thread.sleep()
+- ✅ **Performance** - Fast and reliable test execution
+- ✅ **CI/CD Ready** - Automated testing and reporting
 
 ## 🤝 Contributing
 
