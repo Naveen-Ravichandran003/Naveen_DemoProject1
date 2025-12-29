@@ -1,0 +1,18 @@
+# Mark generated files to exclude from language statistics
+*.html linguist-generated=true
+*.json linguist-generated=true
+*.xml linguist-generated=true
+
+# Mark generated directories
+target/* linguist-generated=true
+reports/* linguist-generated=true
+
+# Mark test screenshots as binary
+*.png linguist-generated=true
+
+# Ensure source code files are properly detected
+*.java linguist-language=Java
+*.feature linguist-language=Gherkin
+*.yml linguist-language=YAML
+*.yaml linguist-language=YAML
+*.bat linguist-language=Batchfile
