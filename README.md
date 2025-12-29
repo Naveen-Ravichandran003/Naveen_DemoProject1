@@ -221,10 +221,9 @@ After execution, reports are available at:
 ### Framework Statistics
 - **Total Files**: 15+ automation files
 - **Code Coverage**: Page Object Model implementation
-- **Test Scenarios**: 4 comprehensive test cases (positive, negative, workflow)
+- **Test Scenarios**: 3 comprehensive test cases (positive, negative, workflow)
 - **Reporting Formats**: 3 different report types
 - **Execution Mode**: Sequential with fresh browser sessions
-- **Language Distribution**: Java (82.9%), Batchfile (14.6%), Gherkin (2.5%)
 
 ### Quality Assurance
 - ✅ **Page Object Model** - Maintainable code structure
