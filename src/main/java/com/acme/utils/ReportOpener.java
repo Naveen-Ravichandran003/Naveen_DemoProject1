@@ -1,5 +1,6 @@
 package com.acme.utils;
 
+import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
 
@@ -29,9 +30,12 @@ public class ReportOpener {
         
         if (reportFile.exists()) {
             try {
-                String absolutePath = reportFile.getAbsolutePath();
-                Runtime.getRuntime().exec(new String[]{"cmd", "/c", "start", "\"\"", absolutePath});
-                System.out.println("📊 TestNG HTML Report: " + absolutePath);
+                if (Desktop.isDesktopSupported()) {
+                    Desktop.getDesktop().open(reportFile);
+                } else {
+                    Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + reportFile.getAbsolutePath());
+                }
+                System.out.println("📊 TestNG HTML Report opened: " + reportFile.getAbsolutePath());
             } catch (IOException e) {
                 System.out.println("Could not open TestNG report: " + e.getMessage());
             }
@@ -46,9 +50,12 @@ public class ReportOpener {
         
         if (reportFile.exists()) {
             try {
-                String absolutePath = reportFile.getAbsolutePath();
-                Runtime.getRuntime().exec(new String[]{"cmd", "/c", "start", "\"\"", absolutePath});
-                System.out.println("🌐 Cucumber HTML Report: " + absolutePath);
+                if (Desktop.isDesktopSupported()) {
+                    Desktop.getDesktop().open(reportFile);
+                } else {
+                    Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + reportFile.getAbsolutePath());
+                }
+                System.out.println("🌐 Cucumber HTML Report opened: " + reportFile.getAbsolutePath());
             } catch (IOException e) {
                 System.out.println("Could not open Cucumber report: " + e.getMessage());
             }
@@ -106,9 +113,12 @@ public class ReportOpener {
         
         if (allureFile.exists()) {
             try {
-                String absolutePath = allureFile.getAbsolutePath();
-                Runtime.getRuntime().exec(new String[]{"cmd", "/c", "start", "\"\"", absolutePath});
-                System.out.println("📈 Allure Report: " + absolutePath);
+                if (Desktop.isDesktopSupported()) {
+                    Desktop.getDesktop().open(allureFile);
+                } else {
+                    Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + allureFile.getAbsolutePath());
+                }
+                System.out.println("📈 Allure Report opened: " + allureFile.getAbsolutePath());
             } catch (IOException e) {
                 System.out.println("Could not open Allure report: " + e.getMessage());
             }
