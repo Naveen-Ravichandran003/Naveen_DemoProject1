@@ -7,6 +7,11 @@ on:
     branches: [ main, Naveen_Demo ]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -86,48 +91,58 @@ jobs:
         
     - name: Deploy to GitHub Pages
       if: always() && github.ref == 'refs/heads/main'
+      uses: actions/deploy-pages@v2
+      with:
+        artifact_name: github-pages
+        
+    - name: Create Pages artifact
+      if: always() && github.ref == 'refs/heads/main'
       run: |
         # Create a simple index page with links to reports
-        mkdir -p gh-pages
-        cp -r target/cucumber-html-reports/* gh-pages/ 2>/dev/null || echo "No cucumber reports found"
+        mkdir -p _site
+        if [ -d "target/cucumber-html-reports" ]; then
+          cp -r target/cucumber-html-reports/* _site/
+        fi
         
         # Create index.html with direct links
-        cat > gh-pages/index.html << 'EOF'
+        cat > _site/index.html << 'EOF'
         <!DOCTYPE html>
         <html>
         <head>
             <title>Test Reports - Naveen_DemoProject1</title>
             <style>
-                body { font-family: Arial, sans-serif; margin: 40px; }
-                .container { max-width: 800px; }
-                .report-link { display: block; padding: 15px; margin: 10px 0; background: #f5f5f5; text-decoration: none; border-radius: 5px; }
-                .report-link:hover { background: #e0e0e0; }
-                h1 { color: #333; }
+                body { font-family: Arial, sans-serif; margin: 40px; background: #f8f9fa; }
+                .container { max-width: 800px; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+                .report-link { display: block; padding: 20px; margin: 15px 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; transition: transform 0.2s; }
+                .report-link:hover { transform: translateY(-2px); color: white; }
+                h1 { color: #333; text-align: center; }
+                .badge { background: #28a745; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; }
             </style>
         </head>
         <body>
             <div class="container">
                 <h1>🧪 Test Reports - Naveen_DemoProject1</h1>
-                <p>Latest test execution reports from CI/CD pipeline</p>
+                <p style="text-align: center; color: #666;">Latest test execution reports from CI/CD pipeline <span class="badge">LIVE</span></p>
                 
                 <a href="report.html" class="report-link">
                     <strong>📊 Cucumber HTML Report</strong><br>
-                    Interactive test execution report with scenarios and steps
+                    <small>Interactive test execution report with scenarios and steps</small>
                 </a>
                 
-                <p><strong>Repository:</strong> <a href="https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1">Naveen_DemoProject1</a></p>
-                <p><strong>Last Updated:</strong> $(date)</p>
+                <div style="text-align: center; margin-top: 30px; color: #666;">
+                    <p><strong>Repository:</strong> <a href="https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1">Naveen_DemoProject1</a></p>
+                    <p><strong>Framework:</strong> Selenium + Cucumber + Amazon Q Developer</p>
+                </div>
             </div>
         </body>
         </html>
         EOF
         
-    - name: Deploy to GitHub Pages
+    - name: Upload Pages artifact
       if: always() && github.ref == 'refs/heads/main'
-      uses: peaceiris/actions-gh-pages@v3
+      uses: actions/upload-pages-artifact@v2
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: gh-pages
+        path: _site
         
     - name: Upload Allure Results
       uses: actions/upload-artifact@v4
