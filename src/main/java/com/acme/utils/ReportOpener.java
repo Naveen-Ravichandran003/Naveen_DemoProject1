@@ -11,6 +11,9 @@ public class ReportOpener {
         // Generate and open Allure report first
         generateAndOpenAllureReport();
         
+        // Open TestNG Report
+        openTestNGReport();
+        
         // Open Cucumber HTML Report
         openCucumberReport();
         
@@ -18,6 +21,22 @@ public class ReportOpener {
         openScreenshotsFolder();
         
         System.out.println("✅ All available reports opened successfully!");
+    }
+    
+    private static void openTestNGReport() {
+        String testngReport = "target/testng-html-report.html";
+        File reportFile = new File(testngReport);
+        
+        if (reportFile.exists()) {
+            try {
+                Runtime.getRuntime().exec("cmd /c start " + testngReport);
+                System.out.println("📊 TestNG HTML Report: " + testngReport);
+            } catch (IOException e) {
+                System.out.println("Could not open TestNG report: " + e.getMessage());
+            }
+        } else {
+            System.out.println("⚠️ TestNG HTML report not found at: " + testngReport);
+        }
     }
     
     private static void openCucumberReport() {

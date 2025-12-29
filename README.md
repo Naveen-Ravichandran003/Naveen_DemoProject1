@@ -53,7 +53,8 @@ src/
 │   └── utils/          # Utility classes
 │       ├── DriverManager.java
 │       ├── ScreenshotUtils.java
-│       └── ReportOpener.java
+│       ├── ReportOpener.java
+│       └── TestNGReportGenerator.java
 └── test/
     ├── java/com/acme/
     │   ├── runners/TestRunner.java
@@ -72,7 +73,7 @@ testng.xml              # TestNG suite configuration
 - 📱 **Headless execution** for CI/CD
 - 📸 **Automatic screenshot capture**
 - ⏱️ **Smart wait strategies**
-- 🚀 **Parallel execution** with TestNG (3 threads)
+- 🔄 **Sequential execution** with fresh browser sessions
 
 ### BDD Implementation
 - 📝 **Gherkin scenarios** for business-readable tests
@@ -81,11 +82,11 @@ testng.xml              # TestNG suite configuration
 - 🔗 **Step definition reusability**
 
 ### TestNG Features
-- ⚡ **Parallel execution** - Run tests simultaneously
-- 📊 **Advanced reporting** - Rich HTML reports
+- 📊 **Advanced reporting** - Custom HTML reports
 - 🔧 **Flexible annotations** - Better test lifecycle control
 - 🎯 **Test grouping** - Organize tests by categories
 - 📋 **Suite management** - XML-based test configuration
+- 🔄 **Fresh sessions** - Clean browser state per scenario
 
 ### Reporting & Analytics
 - 📈 **Allure reports** - Interactive dashboards
@@ -101,6 +102,30 @@ testng.xml              # TestNG suite configuration
 2. **Dashboard Access** - Post-login navigation verification
 3. **User Logout** - Complete session termination
 4. **Negative Testing** - Invalid credential handling
+
+### 📸 Test Execution Screenshots
+
+#### Scenario 1: User Login and Dashboard Verification
+[![User Login Success](test-screenshots/passed_User_login_and_verify_dashboard_20251229_211346.png)](test-screenshots/passed_User_login_and_verify_dashboard_20251229_211346.png)
+*Click to view full-size screenshot of successful login and dashboard verification*
+
+#### Scenario 2: User Logout Functionality
+[![User Logout Success](test-screenshots/passed_User_logout_functionality_20251229_211418.png)](test-screenshots/passed_User_logout_functionality_20251229_211418.png)
+*Click to view full-size screenshot of successful logout process*
+
+#### Scenario 3: Negative Test - Invalid Credentials
+[![Negative Test](test-screenshots/failed_NEGATIVE_TEST___User_login_with_incorrect_password__Intentional_Failure__20251229_211434.png)](test-screenshots/failed_NEGATIVE_TEST___User_login_with_incorrect_password__Intentional_Failure__20251229_211434.png)
+*Click to view full-size screenshot of intentional failure test with invalid credentials*
+
+### 📊 Test Reports
+
+#### Cucumber HTML Report
+[![Cucumber Report](reports/cucumber-report-preview.png)](target/cucumber-html-reports/report.html)
+*Click to open interactive Cucumber HTML report with detailed BDD test results*
+
+#### TestNG HTML Report
+[![TestNG Report](reports/testng-report-preview.png)](target/testng-html-report.html)
+*Click to open TestNG HTML report with execution statistics and test summaries*
 
 ### Target Application
 - **ACME Test Application**: https://acme-test.uipath.com/
@@ -127,14 +152,8 @@ mvn clean install
 # Run all tests using TestNG suite
 mvn clean test
 
-# Run specific TestNG suite
-mvn test -DsuiteXmlFile=testng.xml
-
 # Headless mode (CI/CD)
 mvn test -Dheadless=true
-
-# Parallel execution (3 threads)
-mvn test -Dparallel=methods -DthreadCount=3
 ```
 
 #### 2. Generate Reports
@@ -144,19 +163,13 @@ mvn allure:report
 
 # Start Allure live server
 mvn allure:serve
-# OR
-allure-serve.bat
-
-# Generate reports (Windows)
-generate-reports.bat
 ```
 
 ### Report Access
 After execution, reports are available at:
 - **Cucumber HTML**: `target/cucumber-html-reports/report.html`
-- **TestNG Report**: `target/surefire-reports/index.html`
+- **TestNG HTML**: `target/testng-html-report.html`
 - **Allure Report**: `target/site/allure-maven-plugin/index.html`
-- **TestNG XML**: `target/testng-xml-reports/TestNG.xml`
 - **Screenshots**: `test-screenshots/`
 
 ## 📊 CI/CD Integration
@@ -232,11 +245,11 @@ After execution, reports are available at:
 ## 📈 Project Metrics
 
 ### Framework Statistics
-- **Total Files**: 15+ automation files
+- **Total Files**: 12+ automation files
 - **Code Coverage**: Page Object Model implementation
 - **Test Scenarios**: 3 comprehensive test cases
-- **Reporting Formats**: 4 different report types
-- **Execution Scripts**: 2 utility batch files
+- **Reporting Formats**: 3 different report types
+- **Execution Mode**: Sequential with fresh browser sessions
 
 ### Quality Assurance
 - ✅ **Page Object Model** - Maintainable code structure
@@ -244,7 +257,9 @@ After execution, reports are available at:
 - ✅ **Error Handling** - Robust exception management
 - ✅ **Screenshot Evidence** - Visual test validation
 - ✅ **Wait Strategies** - Reliable element synchronization
-- ✅ **TestNG Integration** - Advanced test management
+- ✅ **TestNG Integration** - Custom HTML report generation
+- ✅ **Thread Safety** - ThreadLocal WebDriver management
+- ✅ **Fresh Sessions** - Clean browser state per test
 
 ## 🤝 Contributing
 

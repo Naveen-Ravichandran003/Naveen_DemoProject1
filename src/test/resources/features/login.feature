@@ -10,17 +10,14 @@ Feature: Login Functionality
     When I enter email "test-demo@acme.com" and password "Test@1234"
     And I click the login button
     Then I should be redirected to the dashboard
-    And I take a screenshot
 
   Scenario: User logout functionality
     When I enter email "test-demo@acme.com" and password "Test@1234"
     And I click the login button
     Then I should be redirected to the dashboard
     And I logout from the application
-    And I take a screenshot
 
   Scenario: NEGATIVE TEST - User login with incorrect password (Intentional Failure)
     When I enter email "test-demo@acme.com" and password "WrongPassword123"
     And I click the login button
     Then I should see an error message
-    And I take a screenshot

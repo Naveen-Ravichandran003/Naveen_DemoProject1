@@ -15,6 +15,11 @@ public class ScreenshotUtils {
     
     public static void takeScreenshot(WebDriver driver, String scenarioName) {
         try {
+            if (driver == null) {
+                System.out.println("Driver is null, cannot take screenshot");
+                return;
+            }
+            
             TakesScreenshot screenshot = (TakesScreenshot) driver;
             File sourceFile = screenshot.getScreenshotAs(OutputType.FILE);
             
@@ -33,7 +38,7 @@ public class ScreenshotUtils {
             // Attach to Allure report
             attachScreenshotToAllure(sourceFile);
             
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.out.println("Failed to take screenshot: " + e.getMessage());
         }
     }

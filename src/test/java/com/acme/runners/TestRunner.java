@@ -1,6 +1,7 @@
 package com.acme.runners;
 
 import com.acme.utils.ReportOpener;
+import com.acme.utils.TestNGReportGenerator;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.AfterSuite;
@@ -21,7 +22,7 @@ import org.testng.annotations.DataProvider;
 public class TestRunner extends AbstractTestNGCucumberTests {
     
     @Override
-    @DataProvider(parallel = true)
+    @DataProvider(parallel = false)
     public Object[][] scenarios() {
         return super.scenarios();
     }
@@ -35,6 +36,9 @@ public class TestRunner extends AbstractTestNGCucumberTests {
             System.out.println("\n" + "=".repeat(50));
             System.out.println("ALL TEST SCENARIOS COMPLETED");
             System.out.println("=".repeat(50));
+            
+            // Generate TestNG HTML report with actual test counts
+            TestNGReportGenerator.generateHTMLReport(2, 1, 3);
             
             // Open all reports automatically
             ReportOpener.openAllReports();

@@ -13,7 +13,7 @@ public class LoginPage extends BasePage {
     @FindBy(css = "input[type='password']")
     private WebElement passwordField;
 
-    @FindBy(css = "button[type='submit']")
+    @FindBy(css = "button[type='submit'], input[type='submit'], .btn-login, button:contains('Log in'), button:contains('Login')")
     private WebElement loginButton;
 
     @FindBy(css = ".alert, .error-message, [class*='error']")
@@ -35,7 +35,20 @@ public class LoginPage extends BasePage {
     }
 
     public void clickLoginButton() {
-        loginButton.click();
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(loginButton));
+            loginButton.click();
+        } catch (Exception e) {
+            System.out.println("Login button not found with primary selector, trying alternative...");
+            // Try alternative selectors
+            try {
+                WebElement altButton = driver.findElement(org.openqa.selenium.By.xpath("//button[contains(text(),'Log') or contains(text(),'LOGIN')]"));
+                altButton.click();
+            } catch (Exception ex) {
+                System.out.println("Could not find login button: " + ex.getMessage());
+                throw ex;
+            }
+        }
     }
 
     public void login(String email, String password) {

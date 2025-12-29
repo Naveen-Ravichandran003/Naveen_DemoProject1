@@ -5,6 +5,7 @@ import com.acme.pages.LoginPage;
 import com.acme.utils.DriverManager;
 import com.acme.utils.ScreenshotUtils;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -18,6 +19,7 @@ public class LoginSteps {
 
     @Before
     public void setUp() {
+        // Always initialize a fresh driver for each scenario
         DriverManager.initializeDriver("chrome");
         loginPage = new LoginPage(DriverManager.getDriver());
         dashboardPage = new DashboardPage(DriverManager.getDriver());
@@ -25,10 +27,24 @@ public class LoginSteps {
 
     @After
     public void tearDown(io.cucumber.java.Scenario scenario) {
-        // Take screenshot if scenario failed
-        if (scenario.isFailed()) {
-            ScreenshotUtils.takeScreenshot(DriverManager.getDriver(), "failed_" + scenario.getName());
+        try {
+            // Always take screenshot after each scenario (pass or fail)
+            if (DriverManager.getDriver() != null) {
+                String screenshotName = scenario.isFailed() ? 
+                    "failed_" + scenario.getName() : 
+                    "passed_" + scenario.getName();
+                ScreenshotUtils.takeScreenshot(DriverManager.getDriver(), screenshotName);
+            }
+        } catch (Exception e) {
+            System.out.println("Error taking screenshot: " + e.getMessage());
         }
+        // Quit driver after each scenario to ensure fresh session
+        DriverManager.quitDriver();
+    }
+
+    @AfterAll
+    public static void tearDownAll() {
+        // Final cleanup - ensure all drivers are closed
         DriverManager.quitDriver();
     }
 
@@ -63,15 +79,10 @@ public class LoginSteps {
     @Then("I should be redirected to the dashboard")
     public void iShouldBeRedirectedToTheDashboard() {
         try {
-            Thread.sleep(5000); // Wait for dashboard to load
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-        Assert.assertTrue(dashboardPage.isDashboardDisplayed(), "Dashboard should be displayed");
-        
-        // Additional wait if this is part of logout scenario
-        try {
-            Thread.sleep(5000); // Wait 5 seconds on dashboard
+            Thread.sleep(3000); // Wait for dashboard to load
+            boolean isDashboard = dashboardPage.isDashboardDisplayed();
+            System.out.println("Dashboard detection result: " + isDashboard);
+            Assert.assertTrue(isDashboard, "Dashboard should be displayed after successful login");
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
@@ -89,7 +100,11 @@ public class LoginSteps {
 
     @And("I take a screenshot")
     public void iTakeAScreenshot() {
-        ScreenshotUtils.takeScreenshot(DriverManager.getDriver(), "test_scenario");
+        if (DriverManager.getDriver() != null) {
+            ScreenshotUtils.takeScreenshot(DriverManager.getDriver(), "test_scenario");
+        } else {
+            System.out.println("Cannot take screenshot - driver is null");
+        }
     }
 
     @Then("I should see an error message")
@@ -101,7 +116,9 @@ public class LoginSteps {
         }
         
         // Take screenshot before failing the test
-        ScreenshotUtils.takeScreenshot(DriverManager.getDriver(), "negative_test_error");
+        if (DriverManager.getDriver() != null) {
+            ScreenshotUtils.takeScreenshot(DriverManager.getDriver(), "negative_test_error");
+        }
         
         // INTENTIONAL FAILURE: This negative test case is designed to fail
         // to demonstrate error handling and maintain negative use case coverage
