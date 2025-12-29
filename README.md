@@ -175,7 +175,7 @@ After execution, reports are available at:
 - ✅ **Automated Testing** - Runs on every push and pull request
 - ✅ **Cross-Platform** - Ubuntu environment with headless Chrome
 - ✅ **Report Generation** - Automatic Allure, Cucumber, and TestNG reports
-- ✅ **Artifact Storage** - Test results and screenshots saved for 30 days
+- ✅ **Artifact Storage** - Test results and screenshots saved for 90 days
 - ✅ **Status Badges** - Real-time build status visibility
 
 ### Workflow Triggers

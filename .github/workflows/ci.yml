@@ -51,7 +51,7 @@ jobs:
           target/testng-html-report.html
           target/site/allure-maven-plugin/
           target/cucumber-json-reports/
-        retention-days: 30
+        retention-days: 90
         
     - name: Upload screenshots
       if: always()
@@ -59,7 +59,7 @@ jobs:
       with:
         name: test-screenshots
         path: test-screenshots/
-        retention-days: 30
+        retention-days: 90
         
     - name: Test Results Summary
       if: always()
