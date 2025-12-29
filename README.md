@@ -8,7 +8,7 @@ The framework follows modern test automation best practices, including the **Pag
 ## 🎥 Demo Recording
 A complete end-to-end demonstration of this project, including Amazon Q Developer–assisted framework generation, test execution, and reporting, is available at the link below:
 
-🔗 **Demo Video (Google Drive):** https://drive.google.com/file/d/1jLzyRj0eA2G76cf_fTAeDACaOkITJ09t/view?usp=sharing 
+🔗 **Demo Video (Google Drive):** https://drive.google.com/file/d/1jLzyRj0eA2G76cf_fTAeDACaOkITJ09t/view?usp=sharing
 
 
 ## 🤖 Amazon Q Developer Contribution
