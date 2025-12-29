@@ -10,19 +10,6 @@ A complete end-to-end demonstration of this project, including Amazon Q Develope
 
 🔗 **Demo Video (Google Drive):** https://drive.google.com/file/d/1jLzyRj0eA2G76cf_fTAeDACaOkITJ09t/view?usp=sharing
 
-### 📸 Test Execution Screenshots
-
-#### Scenario 1: User Login and Dashboard Verification
-📷 [View Screenshot: User Login Success](test-screenshots/passed_User_login_and_verify_dashboard_20251229_211728.png)
-
-#### Scenario 2: User Logout Functionality
-📷 [View Screenshot: User Logout Success](test-screenshots/passed_User_logout_functionality_20251229_211759.png)
-
-#### Scenario 3: Negative Test - Invalid Credentials
-📷 [View Screenshot: Negative Test](test-screenshots/failed_NEGATIVE_TEST___User_login_with_incorrect_password__Intentional_Failure__20251229_211815.png)
-
-**Note**: Screenshots are automatically captured during test execution and stored in the `test-screenshots/` directory.
-
 ## 🤖 Amazon Q Developer Contribution
 This project was generated using Amazon Q Developer AI assistance.
 
@@ -187,7 +174,7 @@ After execution, reports are available at:
 ### GitHub Actions Workflow
 - ✅ **Automated Testing** - Runs on every push and pull request
 - ✅ **Cross-Platform** - Ubuntu environment with headless Chrome
-- ✅ **Report Generation** - Automatic Allure and Cucumber reports
+- ✅ **Report Generation** - Automatic Allure, Cucumber, and TestNG reports
 - ✅ **Artifact Storage** - Test results and screenshots saved for 30 days
 - ✅ **Status Badges** - Real-time build status visibility
 
