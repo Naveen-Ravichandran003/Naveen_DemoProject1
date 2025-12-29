@@ -51,6 +51,14 @@ jobs:
       run: mvn allure:report
       if: always()
       
+    - name: Check generated reports
+      run: |
+        echo "Checking generated reports..."
+        ls -la target/ || true
+        ls -la target/cucumber-html-reports/ || true
+        ls -la target/site/ || true
+      if: always()
+      
     - name: Display test results
       run: |
         echo "Test execution completed. Checking results..."
@@ -77,12 +85,13 @@ jobs:
         retention-days: 30
         
     - name: Deploy Reports to GitHub Pages
-      if: always() && github.ref == 'refs/heads/main'
+      if: always() && github.ref == 'refs/heads/main' && hashFiles('target/cucumber-html-reports/**') != ''
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: target/cucumber-html-reports
         destination_dir: reports
+        keep_files: true
         
     - name: Upload Allure Results
       uses: actions/upload-artifact@v4
