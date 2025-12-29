@@ -1,8 +1,35 @@
-# Naveen_DemoProject1 - Selenium Test Automation Framework
+# Naveen_DemoProject1 – AI-Assisted Selenium Test Automation Framework using Amazon Q Developer
 
 ## 🚀 Overview
+A comprehensive Selenium WebDriver automation framework built using **Java**, **Maven**, and **Cucumber BDD**.  
+This project demonstrates how **Amazon Q Developer** can be used to generate an enterprise-ready test automation framework from scratch using **basic, user-friendly prompts**, significantly reducing manual development effort.
+The framework follows modern test automation best practices, including the **Page Object Model (POM)** and **Behavior-Driven Development (BDD)**, and supports detailed **test execution reporting**, while being designed for scalability, maintainability, and seamless CI/CD integration.
 
-A comprehensive **Selenium WebDriver automation framework** built with **Java**, **Maven**, **Cucumber BDD**, and **Allure reporting**. This project demonstrates modern test automation practices using the Page Object Model pattern and behavior-driven development.
+## 🎥 Demo Recording
+A complete end-to-end demonstration of this project, including Amazon Q Developer–assisted framework generation, test execution, and reporting, is available at the link below:
+
+🔗 **Demo Video (Google Drive):** 
+
+
+## 🤖 Amazon Q Developer Contribution
+This project was generated using Amazon Q Developer AI assistance.
+
+### What Amazon Q Did
+- Generated the complete project structure
+- Created Page Object Model classes
+- Implemented Cucumber step definitions
+- Configured Maven dependencies
+- Set up Allure reporting
+- Created CI/CD-ready execution scripts
+- Generated the initial README documentation
+
+### Manual Effort by Developer
+- Provided user friendly prompts to Amazon Q
+- Reviewed and validated generated code
+- Minor refinements for project-specific needs
+- Executed and demonstrated the framework
+
+This demonstrates how Amazon Q can significantly accelerate enterprise-grade test automation development.
 
 ## 🏗️ Architecture
 
