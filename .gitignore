@@ -8,6 +8,7 @@ target/
 
 # Test outputs
 test-screenshots/*.png
+!test-screenshots/sample_*.png
 !test-screenshots/README.md
 allure-results/
 
