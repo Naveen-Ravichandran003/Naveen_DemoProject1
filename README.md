@@ -113,34 +113,34 @@ mvn clean install
 
 ### Execution Options
 
-#### 1. Complete Test Suite (Recommended)
+#### 1. Run Tests
 ```bash
-# Windows
-run-complete-test-suite.bat
-
-# Manual execution
+# Run all tests
 mvn clean test
-mvn allure:report
-```
 
-#### 2. Quick Test Run
-```bash
-# Windows
-run-tests-now.bat
-
-# Maven command
-mvn test
-```
-
-#### 3. Headless Mode (CI/CD)
-```bash
+# Headless mode (CI/CD)
 mvn test -Dheadless=true
 ```
 
+#### 2. Generate Reports
+```bash
+# Generate Allure report
+mvn allure:report
+
+# Start Allure live server
+mvn allure:serve
+# OR
+allure-serve.bat
+
+# Generate reports (Windows)
+generate-reports.bat
+```
+
 ### Report Access
-After execution, reports are automatically opened:
-- **Cucumber Report**: `target/cucumber-html-reports/report.html`
+After execution, reports are available at:
+- **Cucumber HTML**: `target/cucumber-html-reports/report.html`
 - **Allure Report**: `target/site/allure-maven-plugin/index.html`
+- **Pre-built Reports**: `reports/cucumber-report.html`
 - **Screenshots**: `test-screenshots/`
 
 ## 📊 CI/CD Integration
@@ -180,7 +180,7 @@ After execution, reports are automatically opened:
 - **Code Coverage**: Page Object Model implementation
 - **Test Scenarios**: 3 comprehensive test cases
 - **Reporting Formats**: 4 different report types
-- **Execution Scripts**: 3 automated batch files
+- **Execution Scripts**: 2 utility batch files
 
 ### Quality Assurance
 - ✅ **Page Object Model** - Maintainable code structure
