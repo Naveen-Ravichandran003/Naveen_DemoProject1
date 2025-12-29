@@ -169,12 +169,6 @@ After execution, reports are available at:
 - **Download Artifacts**: Test reports, screenshots, and results
 - **Build Status**: [![CI](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/actions/workflows/ci.yml/badge.svg)](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/actions/workflows/ci.yml)
 
-### Supported Platforms
-- ✅ **GitHub Actions**
-- ✅ **Jenkins**
-- ✅ **Azure DevOps**
-- ✅ **GitLab CI**
-
 ### Pipeline Configuration
 ```yaml
 # Example GitHub Actions
