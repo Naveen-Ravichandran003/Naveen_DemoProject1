@@ -29,8 +29,9 @@ public class ReportOpener {
         
         if (reportFile.exists()) {
             try {
-                Runtime.getRuntime().exec("cmd /c start " + testngReport);
-                System.out.println("📊 TestNG HTML Report: " + testngReport);
+                String absolutePath = reportFile.getAbsolutePath();
+                Runtime.getRuntime().exec(new String[]{"cmd", "/c", "start", "\"\"", absolutePath});
+                System.out.println("📊 TestNG HTML Report: " + absolutePath);
             } catch (IOException e) {
                 System.out.println("Could not open TestNG report: " + e.getMessage());
             }
@@ -45,8 +46,9 @@ public class ReportOpener {
         
         if (reportFile.exists()) {
             try {
-                Runtime.getRuntime().exec("cmd /c start " + htmlReport);
-                System.out.println("🌐 Cucumber HTML Report: " + htmlReport);
+                String absolutePath = reportFile.getAbsolutePath();
+                Runtime.getRuntime().exec(new String[]{"cmd", "/c", "start", "\"\"", absolutePath});
+                System.out.println("🌐 Cucumber HTML Report: " + absolutePath);
             } catch (IOException e) {
                 System.out.println("Could not open Cucumber report: " + e.getMessage());
             }
@@ -104,8 +106,9 @@ public class ReportOpener {
         
         if (allureFile.exists()) {
             try {
-                Runtime.getRuntime().exec("cmd /c start " + allureReport);
-                System.out.println("📈 Allure Report: " + allureReport);
+                String absolutePath = allureFile.getAbsolutePath();
+                Runtime.getRuntime().exec(new String[]{"cmd", "/c", "start", "\"\"", absolutePath});
+                System.out.println("📈 Allure Report: " + absolutePath);
             } catch (IOException e) {
                 System.out.println("Could not open Allure report: " + e.getMessage());
             }
