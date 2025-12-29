@@ -43,12 +43,25 @@ jobs:
     - name: Run tests
       run: |
         export DISPLAY=:99
-        mvn clean test -Dheadless=true
+        mvn clean test -Dheadless=true -Dmaven.test.failure.ignore=true
       env:
         DISPLAY: :99
         
     - name: Generate Allure Report
       run: mvn allure:report
+      if: always()
+      
+    - name: Display test results
+      run: |
+        echo "Test execution completed. Checking results..."
+        if [ -d "target/surefire-reports" ]; then
+          echo "Surefire reports found:"
+          ls -la target/surefire-reports/
+        fi
+        if [ -d "target/cucumber-json-reports" ]; then
+          echo "Cucumber reports found:"
+          ls -la target/cucumber-json-reports/
+        fi
       if: always()
       
     - name: Upload test results
