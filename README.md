@@ -145,6 +145,30 @@ After execution, reports are available at:
 
 ## 📊 CI/CD Integration
 
+### GitHub Actions Workflow
+- ✅ **Automated Testing** - Runs on every push and pull request
+- ✅ **Cross-Platform** - Ubuntu environment with headless Chrome
+- ✅ **Report Generation** - Automatic Allure and Cucumber reports
+- ✅ **Artifact Storage** - Test results and screenshots saved for 30 days
+- ✅ **Status Badges** - Real-time build status visibility
+
+### Workflow Triggers
+- Push to `main` or `Naveen_Demo` branches
+- Pull requests to these branches
+- Manual workflow dispatch
+
+### Pipeline Steps
+1. **Environment Setup** - Java 11, Maven, Chrome
+2. **Dependency Caching** - Faster builds with Maven cache
+3. **Test Execution** - Headless Selenium tests
+4. **Report Generation** - Allure and Cucumber reports
+5. **Artifact Upload** - Reports and screenshots storage
+
+### Viewing Results
+- **GitHub Actions**: [View Workflows](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/actions)
+- **Download Artifacts**: Test reports, screenshots, and results
+- **Build Status**: [![CI](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/actions/workflows/ci.yml/badge.svg)](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/actions/workflows/ci.yml)
+
 ### Supported Platforms
 - ✅ **GitHub Actions**
 - ✅ **Jenkins**
