@@ -12,6 +12,8 @@ The framework follows modern test automation best practices, including the **Pag
 - 🔄 **CI/CD Ready** with GitHub Actions
 - 📸 **Visual Evidence** with automatic screenshots
 - 🎥 **Complete Demo Recording** - End-to-end demonstration available
+- 🔍 **Manual Code Validation** - Reviewed and validated generated code
+- 💬 **User-Friendly Prompts** - Provided clear prompts to generate enterprise framework
 
 ## 🎥 Demo Recording
 A complete end-to-end demonstration of this project, including Amazon Q Developer–assisted framework generation, test execution, and reporting, is available at the link below:
