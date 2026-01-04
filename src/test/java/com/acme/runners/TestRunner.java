@@ -2,6 +2,7 @@ package com.acme.runners;
 
 import com.acme.utils.ReportOpener;
 import com.acme.utils.TestNGReportGenerator;
+import com.acme.utils.ReadmeUpdater;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.AfterSuite;
@@ -36,6 +37,9 @@ public class TestRunner extends AbstractTestNGCucumberTests {
             
             // Generate TestNG HTML report
             TestNGReportGenerator.generateHTMLReport(2, 1, 3);
+            
+            // Update README with latest report links
+            ReadmeUpdater.updateReportLinks();
             
             // Only open reports in non-CI environment
             boolean isCI = "true".equalsIgnoreCase(System.getenv("CI"));
