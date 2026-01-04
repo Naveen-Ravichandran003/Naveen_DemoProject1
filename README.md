@@ -14,6 +14,7 @@ A complete end-to-end demonstration of this project, including Amazon Q Develope
 
 ### 🥒 Cucumber Reports
 - **Live Cucumber Report**: [View Report](https://htmlpreview.github.io/?https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/reports/cucumber-report.html)
+- **Alternative Report Access**: [Download Report](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/raw/Naveen_Demo/reports/cucumber-report.html) *(Right-click → Save As → Open in browser)*
 - **Cucumber Report Preview**:
 ![Cucumber Report](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/reports/cucumber-report-preview.png)
 
@@ -23,8 +24,7 @@ A complete end-to-end demonstration of this project, including Amazon Q Develope
 ![TestNG Report](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/reports/testng-report-preview.png)
 
 ### 📸 Test Screenshots
-- **Successful Login**: [View Screenshot](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/test-screenshots/successful_login.png)
-- **Dashboard Access**: [View Screenshot](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/test-screenshots/successful_dashboard.png)
+- **Successful login and dashboard access**: [View Screenshot](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/test-screenshots/successful_dashboard.png)
 - **Logout Process**: [View Screenshot](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/test-screenshots/successful_logout.png)
 - **Failed Login**: [View Screenshot](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/test-screenshots/failed_login.png)
 
