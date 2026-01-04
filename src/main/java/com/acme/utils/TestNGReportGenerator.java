@@ -43,7 +43,6 @@ public class TestNGReportGenerator {
                 "        .pass-rate { background-color: #FF9800; }\n" +
                 "        .stat-number { font-size: 24px; font-weight: bold; }\n" +
                 "        .stat-label { font-size: 12px; margin-top: 5px; }\n" +
-                "        .timestamp { text-align: center; color: #666; margin-top: 20px; }\n" +
                 "        .note { background-color: #e3f2fd; padding: 15px; border-radius: 5px; margin-top: 20px; }\n" +
                 "    </style>\n" +
                 "</head>\n" +
@@ -81,10 +80,6 @@ public class TestNGReportGenerator {
                 "                <li>📈 Allure Report: <code>target/site/allure-maven-plugin/index.html</code></li>\n" +
                 "                <li>📸 Screenshots: <code>test-screenshots/</code></li>\n" +
                 "            </ul>\n" +
-                "        </div>\n" +
-                "        \n" +
-                "        <div class='timestamp'>\n" +
-                "            Generated on: " + timestamp + "\n" +
                 "        </div>\n" +
                 "    </div>\n" +
                 "</body>\n" +
