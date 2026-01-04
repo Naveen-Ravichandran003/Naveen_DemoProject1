@@ -13,24 +13,20 @@ A complete end-to-end demonstration of this project, including Amazon Q Develope
 ## 📊 Sample Reports & Screenshots
 
 ### 🥒 Cucumber Reports
-- **Live Cucumber Report**: [Download & Open Locally](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/reports/cucumber-report.html) *(Right-click → Save As → Open in browser)*
+- **Live Cucumber Report**: [View Report](https://htmlpreview.github.io/?https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/reports/cucumber-report.html)
 - **Cucumber Report Preview**:
 ![Cucumber Report](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/reports/cucumber-report-preview.png)
 
 ### 📋 TestNG Reports
-- **Live TestNG Report**: [Download & Open Locally](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/reports/testng-report-sample.html) *(Right-click → Save As → Open in browser)*
+- **Live TestNG Report**: [View Report](https://htmlpreview.github.io/?https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/reports/testng-report-sample.html)
 - **TestNG Report Preview**:
 ![TestNG Report](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/reports/testng-report-preview.png)
 
 ### 📸 Test Screenshots
-- **Successful Login**:
-![Login Success](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/test-screenshots/successful_login.png)
-- **Dashboard Access**:
-![Dashboard](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/test-screenshots/successful_dashboard.png)
-- **Logout Process**:
-![Logout](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/test-screenshots/successful_logout.png)
-- **Failed Login**:
-![Login Failed](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/test-screenshots/failed_login.png)
+- **Successful Login**: [View Screenshot](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/test-screenshots/successful_login.png)
+- **Dashboard Access**: [View Screenshot](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/test-screenshots/successful_dashboard.png)
+- **Logout Process**: [View Screenshot](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/test-screenshots/successful_logout.png)
+- **Failed Login**: [View Screenshot](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/test-screenshots/failed_login.png)
 
 ### 📁 Browse All Reports
 - **Reports Directory**: [View All Reports](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/tree/Naveen_Demo/reports)
