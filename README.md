@@ -13,12 +13,12 @@ A complete end-to-end demonstration of this project, including Amazon Q Develope
 ## 📊 Sample Reports & Screenshots
 
 ### 🥒 Cucumber Reports
-- **Live Cucumber Report**: [View Report](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/reports/cucumber-report.html)
+- **Live Cucumber Report**: [Download & Open Locally](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/reports/cucumber-report.html) *(Right-click → Save As → Open in browser)*
 - **Cucumber Report Preview**:
 ![Cucumber Report](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/reports/cucumber-report-preview.png)
 
 ### 📋 TestNG Reports
-- **Live TestNG Report**: [View Report](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/reports/testng-report-sample.html)
+- **Live TestNG Report**: [Download & Open Locally](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/reports/testng-report-sample.html) *(Right-click → Save As → Open in browser)*
 - **TestNG Report Preview**:
 ![TestNG Report](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/Naveen_Demo/reports/testng-report-preview.png)
 
