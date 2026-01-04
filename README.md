@@ -13,8 +13,7 @@ A complete end-to-end demonstration of this project, including Amazon Q Develope
 ## 📊 Sample Reports & Screenshots
 
 ### 🥒 Cucumber Reports
-- **Live Cucumber Report**: [View Report](https://naveen-ravichandran003.github.io/Naveen_DemoProject1/reports/cucumber-report.html)
-- **Alternative Report Access**: [Download Report](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/raw/main/reports/cucumber-report.html) *(Right-click → Save As → Open in browser)*
+- **Cucumber Report**: [View Report](https://naveen-ravichandran003.github.io/Naveen_DemoProject1/reports/cucumber-report.html)
 - **Cucumber Report Preview**:
 ![Cucumber Report](https://github.com/Naveen-Ravichandran003/Naveen_DemoProject1/blob/main/reports/cucumber-report-preview.png)
 
